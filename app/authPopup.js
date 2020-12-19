@@ -97,7 +97,8 @@ function getTokenPopup(request) {
 function seeProfile() {
     getTokenPopup(loginRequest)
         .then(response => {
-            callMSGraph(graphConfig.graphMeEndpoint, response.accessToken, updateUI);
+            console.log(JSON.stringify(response));
+            callApi(graphConfig.graphMeEndpoint, response.accessToken, updateUI);
         }).catch(error => {
             console.error(error);
         });
@@ -106,7 +107,28 @@ function seeProfile() {
 function readMail() {
     getTokenPopup(tokenRequest)
         .then(response => {
-            callMSGraph(graphConfig.graphMailEndpoint, response.accessToken, updateUI);
+            console.log(JSON.stringify(response));
+            callApi(graphConfig.graphMailEndpoint, response.accessToken, updateUI);
+        }).catch(error => {
+            console.error(error);
+        });
+}
+
+function readSubscriptions() {
+    getTokenPopup(armTokenRequest)
+        .then(response => {
+            console.log(JSON.stringify(response));
+            callApi(armConfig.subscriptions, response.accessToken, updateUI);
+        }).catch(error => {
+            console.error(error);
+        });
+}
+
+function readCentralApps() {
+    getTokenPopup(iotcTokenRequest)
+        .then(response => {
+            console.log(JSON.stringify(response));
+            callApi(centralConfig.applications, response.accessToken, updateUI);
         }).catch(error => {
             console.error(error);
         });

@@ -42,6 +42,12 @@
         <br>
         <br>
         <button class="btn btn-primary" id="readMail" onclick="readMail()">Read Mails</button>
+        <br>
+        <br>
+        <button class="btn btn-primary" id="readSubscriptions" onclick="readSubscriptions()">Read Subscriptions</button>
+        <br>
+        <br>
+        <button class="btn btn-primary" id="readSubscriptions" onclick="readCentralApps()">List Central applications</button>
       </div>
     </div>
     </div>
@@ -66,12 +72,12 @@
     
     <!-- importing app scripts (load order is important) -->
     <script type="text/javascript" src="./authConfig.js"></script>
-    <script type="text/javascript" src="./graphConfig.js"></script>
+    <script type="text/javascript" src="./apiConfig.js"></script>
     <script type="text/javascript" src="./ui.js"></script>
     
     <!-- <script type="text/javascript" src="./authRedirect.js"></script>   -->
     <!-- uncomment the above line and comment the line below if you would like to use the redirect flow -->
     <script type="text/javascript" src="./authPopup.js"></script>
-    <script type="text/javascript" src="./graph.js"></script>
+    <script type="text/javascript" src="./api.js"></script>
   </body>
 </html>
